@@ -1,0 +1,82 @@
+---
+// Confirmar.astro
+---
+
+<section id="confirmar" class="relative w-full py-10 px-6 text-center overflow-hidden isolate">
+
+    <!-- FLOR DECORATIVA IZQUIERDA -->
+    <img
+        src="/imagenes/florcostado.png"
+        alt=""
+        aria-hidden="true"
+        class="absolute top-1/2 right-0 w-40 pointer-events-none select-none opacity-30 -translate-y-1/2 scale-x-[-1] z-[-1]"
+    />
+    <!-- SEPARADOR -->
+    <img
+        src="/imagenes/separador.png"
+        alt=""
+        aria-hidden="true"
+        class="mx-auto mb-7 w-48"
+    />
+
+    <!-- TÍTULO -->
+    <p class="font-romantic text-3xl text-[#B8960C] leading-snug">
+        Confirmar Asistencia
+    </p>
+
+    <!-- TEXTO -->
+    <p
+        class="font-cormorant italic text-xl text-[#5C6E48] mt-4 leading-relaxed max-w-xs mx-auto"
+    >
+        Tu presencia es muy importante para nosotros. <br />Por favor,
+        confírmanos tu asistencia.
+
+        <!-- BOTONES WHATSAPP -->
+        <div class="flex flex-col items-center gap-4 mt-8">
+            <!-- Confirmar con el Novio -->
+            <a
+                href="https://wa.me/59167320006?text=Me%20complace%20confirmar%20mi%20asistencia%20a%20la%20boda%20de%20Wilbert%20y%20Yillda.%20Nos%20vemos%20el%20s%C3%A1bado%2030%20de%20mayo.%20%C2%A1Estar%C3%A9%20sin%20falta!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full max-w-xs block py-3 px-6 rounded-full font-cormorant uppercase text-sm tracking-widest text-white bg-[#6B8A52] hover:opacity-85 transition-opacity"
+            >
+                Confirmar con el Novio
+            </a>
+
+            <!-- Confirmar con la Novia -->
+            <a
+                href="https://wa.me/59171577752?text=Me%20complace%20confirmar%20mi%20asistencia%20a%20la%20boda%20de%20Wilbert%20y%20Yillda.%20Nos%20vemos%20el%20s%C3%A1bado%2030%20de%20mayo.%20%C2%A1Estar%C3%A9%20sin%20falta!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full max-w-xs block py-3 px-6 rounded-full font-cormorant uppercase text-sm tracking-widest text-[#6B8A52] border border-[#6B8A52] hover:opacity-85 transition-opacity"
+            >
+                Confirmar con la Novia
+            </a>
+        </div>
+    </p>
+
+    <script>
+        import { gsap } from "gsap";
+        import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.fromTo(
+                "#confirmar",
+                { opacity: 0, y: 28 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.3,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: "#confirmar",
+                        start: "top 82%",
+                        toggleActions: "play none none reset",
+                    },
+                },
+            );
+        });
+    </script>
+</section>

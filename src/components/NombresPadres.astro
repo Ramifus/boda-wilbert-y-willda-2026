@@ -1,0 +1,91 @@
+---
+// NombresPadres.astro
+---
+
+<section
+    id="nombres-padres"
+    class="relative w-full pt-2 pb-10 px-8 text-center overflow-hidden isolate"
+>
+    <!-- FLOR DECORATIVA DERECHA -->
+    <img
+        src="/imagenes/florcostado.png"
+        alt=""
+        aria-hidden="true"
+        class="absolute top-1/2 right-0 w-40 pointer-events-none select-none opacity-30 scale-x-[-1] -translate-y-1/2 z-[-1]"
+    />
+    <!-- TÍTULO -->
+    <p class="font-upcii uppercase text-2xl leading-snug text-[#B8960C]">
+        Con la bendición de Dios<br />y de nuestros padres
+    </p>
+
+    <!-- PADRES DEL NOVIO -->
+    <div class="mt-6">
+        <p class="font-upcil text-2xl text-[#B8960C]">PADRES DEL NOVIO</p>
+        <p class="font-cormorant text-xl text-[#6B8A52] mt-1 leading-snug">
+            Santiago Chura Condori (+)
+        </p>
+        <p class="font-cormorant text-xl text-[#6B8A52] leading-snug">
+            María Getrudez Perez Choque
+        </p>
+    </div>
+
+    <!-- PADRES DE LA NOVIA -->
+    <div class="mt-7">
+        <p class="font-upcil text-2xl text-[#B8960C]">PADRES DE LA NOVIA</p>
+        <p class="font-cormorant text-xl text-[#6B8A52] mt-1 leading-snug">
+            Feliz Guarachi Forra
+        </p>
+        <p class="font-cormorant text-xl text-[#6B8A52] leading-snug">
+            Ana Maria Huanca de Guarachi
+        </p>
+    </div>
+
+    <!-- CONSEJEROS ESPIRITUALES -->
+    <div class="mt-7">
+        <p class="font-upcil text-2xl text-[#B8960C]">
+            CONSEJEROS ESPIRITUALES
+        </p>
+        <p class="font-cormorant text-xl text-[#6B8A52] mt-1 leading-snug">
+            Rev. Felix Mamani Fabian
+        </p>
+        <p class="font-cormorant text-xl text-[#6B8A52] leading-snug">
+            Ptra. Ana Maria Espinoza Mamani
+        </p>
+    </div>
+
+    <!-- MADRINAS DE TORTA -->
+    <div class="mt-7">
+        <p class="font-upcil text-2xl text-[#B8960C]">MADRINAS DE TORTA</p>
+        <p class="font-cormorant text-xl text-[#6B8A52] mt-1 leading-snug">
+            Lic. Lizbeth Forra Paucara
+        </p>
+        <p class="font-cormorant text-xl text-[#6B8A52] leading-snug">
+            Lic. Flor de María Forra Paucra
+        </p>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.fromTo(
+            "#nombres-padres",
+            { opacity: 0, y: 28 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.3,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#nombres-padres",
+                    start: "top 82%",
+                    toggleActions: "play none none reset",
+                },
+            },
+        );
+    });
+</script>

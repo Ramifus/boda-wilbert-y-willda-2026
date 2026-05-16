@@ -1,0 +1,69 @@
+---
+// Despedida.astro
+---
+
+<section id="despedida" class="relative w-full py-12 px-8 text-center overflow-hidden isolate">
+
+    <!-- FLOR DECORATIVA DERECHA -->
+    <img
+        src="/imagenes/florcostado.png"
+        alt=""
+        aria-hidden="true"
+        class="absolute top-1/2 left-0 w-40 pointer-events-none select-none opacity-30 -translate-y-1/2 z-[-1]"
+    />
+    <div class="relative z-10">
+    <!-- SEPARADOR IMAGEN -->
+    <img
+        src="/imagenes/separador.png"
+        alt=""
+        aria-hidden="true"
+        class="mx-auto mb-8 w-48"
+    />
+
+    <!-- TEXTO DE DESPEDIDA -->
+    <p
+        class="font-cormorant italic text-xl text-[#5C6E48] leading-[1.85] max-w-xs mx-auto"
+    >
+        Gracias por acompañarnos en el día más especial de nuestra historia. Su
+        compañía en este día es el mayor regalo que podemos recibir. Gracias por
+        sus oraciones, su cariño y por ser parte de nuestro camino. Estamos
+        agradecidos con Dios por permitirnos celebrar este momento con ustedes,
+        nuestra familia y amigos más queridos.
+    </p>
+
+    <!-- CON TODO NUESTRO AMOR -->
+    <p class="font-upcil uppercase text-2xl text-[#4A6035] mt-8">
+        Con todo nuestro amor
+    </p>
+
+    <!-- NOMBRES -->
+    <h2 class="font-romantic text-3xl text-[#B8960C] mt-3 leading-tight">
+        Wilbert y Yillda
+    </h2>
+    </div>
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+        gsap.fromTo(
+            "#despedida",
+            { opacity: 0, y: 28 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1.4,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#despedida",
+                    start: "top 82%",
+                    toggleActions: "play none none reset",
+                },
+            },
+        );
+    });
+</script>
